@@ -1,0 +1,123 @@
+%secondarySharedState {
+  border-color: rgba(75, 85, 89, 1);
+  color: rgba(75, 85, 89, 1);
+}
+
+%secondaryAltSharedState {
+  border-color: rgba(138, 181, 0, 1);
+  color: rgba(138, 181, 0, 1);
+}
+
+%tertiarySharedState {
+  background-color: rgba(0, 51, 102, 1);
+  color: rgba(255, 255, 255, 1);
+}
+
+:host {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  border-radius: 3px;
+  padding: 0 10px;
+  height: 40px;
+  min-width: 90px;
+  width: auto;
+  background-color: rgba(110, 108, 122, 1);
+}
+
+:host(.primary) {
+  background-color: rgba(153, 204, 0, 1);
+  color: rgba(255, 255, 255, 1);
+  &:hover {
+    background-color: rgba(138, 181, 0, 1);
+  }
+  &:focus {
+    background-color: rgba(138, 181, 0, 1);
+    box-shadow: inset 0 1 1 0 rgba(0, 0, 0, 0.2);
+  }
+  &:active {
+    box-shadow: inset 0 1 1 0 rgba(0, 0, 0, 0.2);
+  }
+  &:disabled {
+    background-color: rgba(153, 204, 0, 0.5);
+  }
+}
+
+:host(.secondary) {
+  border: 1px solid;
+  border-color: rgba(97, 111, 116, 1);
+  background: none;
+  color: rgba(97, 111, 116, 1);
+  &:hover {
+    @extend %secondarySharedState;
+  }
+  &:focus {
+    @extend %secondarySharedState;
+  }
+  &:active {
+    @extend %secondarySharedState;
+  }
+  &:disabled {
+    border-color: rgba(97, 111, 116, 0.5);
+    color: rgba(97, 111, 116, 0.5);
+  }
+}
+
+:host(.secondary-alt) {
+  border: 1px solid;
+  border-color: rgba(153, 204, 0, 1);
+  background: none;
+  color: rgba(153, 204, 0, 1);
+  &:hover {
+    @extend %secondaryAltSharedState;
+  }
+  &:focus {
+    @extend %secondaryAltSharedState;
+  }
+  &:active {
+    @extend %secondaryAltSharedState;
+  }
+  &:disabled {
+    border-color: rgba(153, 204, 0, 0.5);
+    color: rgba(153, 204, 0, 0.5);
+  }
+}
+
+:host(.tertiary) {
+  background-color: rgba(236, 240, 241, 1);
+  color: rgba(0, 51, 102, 1);
+  &:hover {
+    @extend %tertiarySharedState;
+  }
+  &:focus {
+    @extend %tertiarySharedState;
+  }
+  &:active {
+    @extend %tertiarySharedState;
+  }
+  &:disabled {
+    background-color: rgba(236, 240, 241, 0.5);
+    color: rgba(0, 51, 102, 0.5);
+  }
+}
+
+:host(.warning) {
+  background-color: rgba(204, 41, 41, 1);
+  color: rgba(255, 255, 255, 1);
+  &:hover {
+    background-color: rgba(166, 33, 33, 1);
+  }
+  &:focus {
+    background-color: rgba(166, 33, 33, 1);
+    box-shadow: inset 0 1 1 0 rgba(0, 0, 0, 0.2);
+  }
+  &:active {
+    box-shadow: inset 0 1 1 0 rgba(0, 0, 0, 0.2);
+  }
+  &:disabled {
+    opacity: 0.5;
+  }
+}
